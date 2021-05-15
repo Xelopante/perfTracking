@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*-----------------/*
+       GLOBAL
+/*-----------------*/
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: white;
+    color:#2e2e2e;
+    height: 100%;
+    width: 100%;
+    font-family: 'Calibri', sans-serif;
+}
+
+h1 {
+    font-size: 46pt;
+    text-transform: uppercase;
+    margin: auto;
+    width: 80%;
+    padding: 40px;
+}
+
+h2 {
+    font-size: 20pt;
+    text-transform: uppercase;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 18pt;
+    font-style: italic;
+    font-weight: bold;
+    color: #002F7C;
+}
+
+p {
+    font-size: 16pt;
+    line-height: 16pt;
+}
+
+.mt-215 {
+    margin-top:215px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+
+/*-----------------/*
+    COLOR & BACK
+/*-----------------*/
+
+.bkg-1 {
+    background-color : #002F7C;
+    z-index:3;
+}
+
+.bkg-2 {
+    background-color: #2e2e2e;
+    color: white;
+    height: 100%;
+}
+
+
+/*-----------------/*
+       NAVBAR
+/*-----------------*/
+
+.header {
+    background-color: #002F7C;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.7);
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    height: 76px !important;
+}
+
+.logo {
+    margin-top: 10px;
+    display:block;
+    float:left;
+    text-decoration: none;
+    margin-left:30px;
+    width: 55px;
+}
+
+
+/*-----------------/*
+MENU & MENU DEROULANT
+/*-----------------*/
+
+.header ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+    overflow: hidden;
+}
+
+.header li a {
+    display:block;
+    padding: 20px;
+    text-decoration:none;
+    color: white !important;
+    font-size: 16pt;
+    color:initial;
+    transition: font-size .2s ease-in-out;
+}
+
+.header li a:hover {
+    font-size: 20pt;
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-in-out;
+    background-color: #002F7C;
+}
+
+/* --- BURGER --- */
+
+.header .burger-btn {
+    display: none;
+}
+
+.header .burger-btn:checked ~ .menu {
+    max-height: max-content;
+}
+
+.header .burger-btn:checked ~ .burger-icon .navline {
+    background: transparent;
+}
+
+.header .burger-btn:checked ~ .burger-icon .navline:before {
+    transform: rotate(-45deg);
+}
+
+.header .burger-btn:checked ~ .burger-icon .navline:after {
+    transform: rotate(45deg);
+}
+
+.header .burger-btn:checked ~ .burger-icon:not(.steps) .navline:before,
+.header .burger-btn:checked ~ .burger-icon:not(.steps) .navline:after {
+    top: 0;
+}
+
+
+/*-----------------/*
+      MENU LARGE
+/*-----------------*/
+
+@media (min-width:1000px) {
+    .header li {
+        float:left;
+    }
+
+    .header li a {
+        padding: 25px 50px 0 0;
+    }
+
+    .header .menu {
+        clear: none;
+        float:right;
+        max-height:none;
+        margin-right: 75px;
+    }
+
+    .header .burger-icon {
+        display:none;
+    }
+}
+
+
+/*-----------------/*
+       CONTENU
+/*-----------------*/
+
+/* --- div d'affichage --- */
+
+.contenu {
+    margin-top: 5%;
+    margin-left: 7%;
+    margin-right: 7%;
+    position: relative;
+
+    -webkit-box-shadow: 0px 12px 61px 5px rgba(0,0,0,0.30);
+    -moz-box-shadow: 0px 12px 61px 5px rgba(0,0,0,0.30);
+    box-shadow: 0px 12px 61px 5px rgba(0,0,0,0.30);
+}
+
+.inscription-link {
+    padding: 20px;
+    font-size: 14pt;
+}
+
+.erreur404 {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+}
+
+/* --- inputs --- */
+.input-group {
+    text-align: center;
+    padding: 20px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+.input-group-seance {
+    text-align: center;
+    padding: 30px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+    border-top: solid 1px;
+}
+
+.input-block {
+    padding: 20px;
+}
+
+.input-custom {
+    width: 350px;
+    height: 35px;
+    font-size: 13pt;
+    background-color: #fafafa;
+    border:0;
+    box-shadow:0 0 4px rgba(0,0,0,0.5);
+    transition: .3s box-shadow;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.input-custom:hover {
+    box-shadow:0 0 4px rgba(0,0,0,0.85);
+}
+
+.input-custom:focus::placeholder {
+    color: transparent;
+}
+
+.creer-seance {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 3%;
+}
+
+.button-custom {
+    color: white;
+    background-color: #002F7C;
+    border:none;
+    border-radius: 15px;
+    width: 140px;
+    font-size: 14pt;
+    font-weight: bold;
+    height: 40px;
+    box-shadow:0 0 4px rgba(0,0,0,0.5);
+    transition: .3s background-color, color;
+}
+
+.button-custom-seance {
+    color: white;
+    background-color: #002F7C;
+    border:none;
+    border-radius: 30px;
+    width: 500px;
+    font-size: 18pt;
+    font-weight: bold;
+    height: 60px;
+    box-shadow:0 0 4px rgba(0,0,0,0.5);
+    transition: .3s background-color, color;
+}
+
+.button-custom-tableau {
+    color: white;
+    background-color: #002F7C;
+    width: 100px;
+    height: 25px;
+    border:none;
+    border-radius: 5px;
+    font-size: 12pt;
+    box-shadow:0 0 4px rgba(0,0,0,0.5);
+    transition: .3s background-color, color;
+}
+
+.button-custom:hover, .button-custom-seance:hover, .button-custom-tableau:hover {
+    background-color: white;
+    color: black;
+}
+
+.search-group {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+}
+
+.seance-group {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    border-top: solid 1px;
+    border-color: rgba(0,0,0,.7);
+    padding: 1% 0;
+}
+
+.seance {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.seance-group a {
+    text-decoration: none;
+    padding: 0 2%;
+}
+
+.seance-p {
+    padding: 0 3%;
+    display: inline-flex;
+}
+
+.exercice-group {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    border-top: solid 1px;
+    border-color: rgba(104, 104, 104, 0.7);
+    border-radius: 5px;
+    padding: 1% 0;
+}
+
+.exercice-p {
+    padding: 0 3%;
+}
+
+.custom-label {
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 10px;
+}
+
+.custom-number {
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    border: solid 1px #002F7C;
+}
+
+.custom-select {
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    border: solid 2px #002F7C;
+}
+
+.custom-time {
+    border-radius: 10px;
+    border: solid 1px #002F7C;
+}
+
+.group-date {
+    padding: 1.5%;
+}
+
+.group-time {
+    display: inline-block;
+    padding: 1.5%;
+}
+
+.input-inline {
+    display: inline;
+    padding: 0 1%;
+}
+
+.custom-datetime {
+    width: 150px;
+    border-radius: 10px;
+    border: solid 2px #002F7C;
+    height: 30px;
+}
+
+.div-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* --- Statistiques --- */
+
+.recherche {
+
+    float: left;
+    width: 50%;
+    position: relative;
+    height: 100%;
+}
+
+.pourcentage {
+
+    float: right;
+    width: 50%;
+    position: relative;
+    height: 100%;
+}
+
+.pourcent-stats-up {
+
+    font-size: 54pt;
+    color: #01ad1e;
+}
+
+.pourcent-stats-down {
+
+    font-size: 54pt;
+    color: #ad0101;
+}
+
+.pourcent-stats-neutral {
+
+    font-size: 54pt;
+    color: #464646;
+}
+
+/*-----------------/*
+     TEXT-ALIGN
+/*-----------------*/
+
+.text-center{
+    text-align:center;
+}
+
+.text-rigth{
+    text-align:right;
+}
+
+.text-left{
+    text-align:left;
+}
+
+.text-justify{
+    text-align:justify;
+}
+
+
+/*-----------------/*
+     RESPONSIVE
+/*-----------------*/
+
+@media screen and (max-width:999px) {
+    .header .burger-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        padding: 33px 33px 0 0;
+        position: relative;
+        user-select: none;
+    }
+
+    .header li a {
+        display: block;
+        padding: 15px 15px;
+        text-decoration: none;
+    }
+
+    .header .burger-icon .navline {
+        background: #333;
+        display: block;
+        height: 6px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 40px;
+    }
+
+    .header .burger-icon .navline:before,
+    .header .burger-icon .navline:after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    .header .burger-icon .navline:before {
+        top: 13px;
+    }
+
+    .header .burger-icon .navline:after {
+        top: -13px;
+    }
+
+    .inscription-link {
+        text-align: center;
+        font-size: 10pt;
+    }
+
+    .logo {
+        margin-top: 10px;
+        display: block;
+        float: left;
+        padding: 0;
+        margin-left:30px;
+        width: 55px;
+    }
+
+    .header .burger-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        padding: 33px 17px 0 0;
+        position: relative;
+        user-select: none;
+    }
+
+    h1 {
+        font-size: 30pt;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 35pt;
+        margin: auto;
+        width: 80%;
+    }
+
+    .input-custom {
+        display: block;
+        width: 270px;
+        height: 30px;
+        font-size: 10pt;
+    }
+
+    .input-block {
+        padding: 10px;
+    }
+
+    .button-custom {
+        font-size: 10pt;
+        font-weight: normal;
+        width: 115px;
+        height: 30px;
+    }
+
+    p {
+        font-size: 13pt;
+        font-weight: bold;
+        line-height: 13pt;
+    }
+
+    .big-btn {
+        background-color: #ffa600;
+        padding: 7px 25px;
+        border-radius: 23px;
+        color: white;
+        text-decoration: none;
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: 0s;
+    }
+}
